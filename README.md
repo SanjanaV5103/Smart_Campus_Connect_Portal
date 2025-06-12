@@ -1,1 +1,0 @@
-# Smart_Campus_Connect_Portal
