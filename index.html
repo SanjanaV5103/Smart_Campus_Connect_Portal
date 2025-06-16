@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .hero-content {
+      padding-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Smart Campus Connect</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Modules</a></li>
+            <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
+            <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="#queries">Queries</a></li>
+            <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-content text-center text-white py-5">
+      <h2>Connecting Campus. Empowering Students.</h2>
+      <p>Your digital platform for real-time announcements, events, queries, and feedback.</p>
+      <a href="#features" class="btn btn-warning btn-lg mt-3">Explore Features</a>
+    </div>
+  </header>
+
+  <section class="highlights text-center py-5">
+    <div class="container d-flex flex-wrap justify-content-around">
+      <div class="highlight">
+        <h3>📣 215+</h3>
+        <p>Announcements Shared</p>
+      </div>
+      <div class="highlight">
+        <h3>🎉 80+</h3>
+        <p>Events Organized</p>
+      </div>
+      <div class="highlight">
+        <h3>💬 1.2K+</h3>
+        <p>Queries Resolved</p>
+      </div>
+      <div class="highlight">
+        <h3>⭐ 95%</h3>
+        <p>Feedback Response Rate</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="text-center">Portal Modules</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+        <div class="col">
+          <div class="card p-3">
+            <h3>📢 Announcements</h3>
+            <p>View department-wise announcements categorized by date, urgency, and relevance.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-3">
+            <h3>📅 Events</h3>
+            <p>Discover academic, cultural, and club events. Register and sync with calendar.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-3">
+            <h3>❓ Queries</h3>
+            <p>Ask academic or admin questions. Tag them by topic and track responses.</p>
+          </div>
+        </div>
+        <div class="col">
+        <div class="card p-3" style="cursor: pointer;" onclick="toggleFeedbackForm()">
+          <h3>📝 Feedback</h3>
+          <p>We'd love to hear from you! Click here to open the feedback form and let us know your thoughts.</p>
+        </div>
+        <div id="feedbackFormContainer" class="p-3 border border-top-0" style="display: none;">
+          <form id="feedbackCardForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="cardUsername" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="cardUsername" placeholder="Enter your full name" required>
+              <div class="invalid-feedback">Full name is required.</div>
+            </div>
+            <div class="mb-3">
+              <label for="cardEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="cardEmail" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="cardMessage" class="form-label">Message</label>
+              <textarea class="form-control" id="cardMessage" rows="3"  placeholder="Write your feedback here..." required></textarea>
+              <div class="invalid-feedback">Message cannot be empty.</div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section class="module-section" id="announcements">
+    <div class="container">
+      <h2 class="mb-4">Latest Announcements</h2>
+      <div class="d-flex align-items-center position-relative">
+        <button class="btn btn-light me-2 announcement-arrow" id="announcement-left" aria-label="Scroll Left" style="z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);"><span aria-hidden="true">&#8592;</span></button>
+        <div class="announcement-roller position-relative overflow-hidden flex-grow-1" style="height: 320px; min-width: 0;">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 flex-nowrap flex-row announcement-track" style="transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); will-change: transform;">
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">Exam Timetable Released</h4>
+                  <p class="card-text">Check the final semester exam schedule. Uploaded on June 5, 2025.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">Internship Opportunity</h4>
+                  <p class="card-text">Google Summer Internship 2025 - Apply by June 15. See Career Cell section.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">Library Notice</h4>
+                  <p class="card-text">Library will be closed on June 18 for maintenance.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">Scholarship Deadline</h4>
+                  <p class="card-text">Last date to apply for merit scholarships is June 25, 2025.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">Sports Meet Registration</h4>
+                  <p class="card-text">Register for the Annual Sports Meet by June 22 at the Sports Office.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm event-card">
+                <div class="card-body">
+                  <h4 class="card-title">New Cafeteria Menu</h4>
+                  <p class="card-text">Cafeteria introduces new healthy meal options from June 17.</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <button class="btn btn-light ms-2 announcement-arrow" id="announcement-right" aria-label="Scroll Right" style="z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);"><span aria-hidden="true">&#8594;</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section pt-2" id="events">
+    <div class="container">
+      <h2 class="mb-4">Upcoming Events</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <img src="aiworkshop.jpg" class="card-img-top" alt="AI Workshop" style="object-fit:cover; height:180px;">
+            <div class="card-body">
+              <h4 class="card-title">AI Workshop</h4>
+              <p class="card-text">Hands-on AI & ML session by alumni on June 20 at the Main Seminar Hall.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <img src="techfest.png" class="card-img-top" alt="TechFest 2025" style="object-fit:cover; height:180px;">
+            <div class="card-body">
+              <h4 class="card-title">TechFest 2025</h4>
+              <p class="card-text">3-day fest with hackathons and talks. Register now!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <img src="cln.png" class="card-img-top" alt="Cultural Night" style="object-fit:cover; height:180px;">
+            <div class="card-body">
+              <h4 class="card-title">Cultural Night</h4>
+              <p class="card-text">Join us for an evening of music, dance, and fun on June 28 in the Open Air Theatre.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <img src="asm.jpeg" class="card-img-top" alt="Sports Meet" style="object-fit:cover; height:180px;">
+            <div class="card-body">
+              <h4 class="card-title">Annual Sports Meet</h4>
+              <p class="card-text">Compete in athletics and games. Registration closes June 22.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <img src="al.png" class="card-img-top" alt="Alumni Talk" style="object-fit:cover; height:180px;">
+            <div class="card-body">
+              <h4 class="card-title">Alumni Talk</h4>
+              <p class="card-text">Inspiring session by alumni on career growth, June 24, Seminar Room 2.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section" id="queries">
+    <div class="container">
+      <h2 class="mb-4">Student Queries</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Course Re-registration</h4>
+              <p class="card-text">Can students re-register for a failed elective next year?</p>
+              <p class="card-text"><strong>Response:</strong> Yes, during the first two weeks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Lab Attendance Issue</h4>
+              <p class="card-text">Attendance not reflected for DBMS lab.</p>
+              <p class="card-text"><strong>Response:</strong> Contact Lab Coordinator via portal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Hostel WiFi Problem</h4>
+              <p class="card-text">WiFi is slow in Hostel Block B. Any solution?</p>
+              <p class="card-text"><strong>Response:</strong> IT Cell is working on an upgrade, ETA June 19.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Library Book Request</h4>
+              <p class="card-text">Can we request new books for the library?</p>
+              <p class="card-text"><strong>Response:</strong> Yes, use the online request form on the portal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section" id="feedback">
+    <div class="container">
+      <h2 class="mb-4">Recent Feedback Highlights</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Course: Web Technologies</h4>
+              <p class="card-text">“Add more practical sessions and live projects.”</p>
+              <p class="card-text"><strong>Status:</strong> Action Taken – New mini project added.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Event: Hackathon</h4>
+              <p class="card-text">“Great initiative! Prefer 24hr format.”</p>
+              <p class="card-text"><strong>Status:</strong> Under Review.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Cafeteria</h4>
+              <p class="card-text">“More healthy food options, please.”</p>
+              <p class="card-text"><strong>Status:</strong> New menu introduced from June 17.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm event-card">
+            <div class="card-body">
+              <h4 class="card-title">Sports Facilities</h4>
+              <p class="card-text">“Need more basketballs and nets.”</p>
+              <p class="card-text"><strong>Status:</strong> Request approved, new equipment arriving soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial-grid">
+      <blockquote>
+        “This platform keeps me updated with everything from events to feedback responses.”  
+        <cite>– Asha M., 3rd Year IT Student</cite>
+      </blockquote>
+      <blockquote>
+        “Efficient, clean, and so easy to use. It has streamlined internal communication.”  
+        <cite>– Dr. Mehra, Associate Dean</cite>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Smart Campus Connect Portal. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+  <script>
+    // Rolling Announcements JS with Arrow Controls
+    (function() {
+      const track = document.querySelector('.announcement-track');
+      const roller = document.querySelector('.announcement-roller');
+      const leftBtn = document.getElementById('announcement-left');
+      const rightBtn = document.getElementById('announcement-right');
+      if (!track || !roller) return;
+      let scrollAmount = 0;
+      let cardWidth = track.querySelector('.col').offsetWidth + 32; // 32px for g-4 gap
+      let totalCards = track.children.length;
+      let maxScroll = cardWidth * totalCards;
+
+      // Clone nodes for infinite effect
+      for (let i = 0; i < 3; i++) {
+        track.appendChild(track.children[i].cloneNode(true));
+      }
+
+      function roll() {
+        scrollAmount += 1; // Reverted to slower speed
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+        if (scrollAmount >= maxScroll) {
+          scrollAmount = 0;
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+          setTimeout(() => {
+            track.style.transition = '';
+          }, 50);
+        }
+      }
+      let interval = setInterval(roll, 20); // Reverted to slower interval
+      roller.addEventListener('mouseenter', () => clearInterval(interval));
+      roller.addEventListener('mouseleave', () => interval = setInterval(roll, 20));
+
+      // Arrow controls
+      leftBtn.addEventListener('click', function() {
+        scrollAmount -= cardWidth;
+        if (scrollAmount < 0) scrollAmount = 0;
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+      });
+      rightBtn.addEventListener('click', function() {
+        scrollAmount += cardWidth;
+        if (scrollAmount >= maxScroll) scrollAmount = 0;
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+      });
+    })();
+  </script>
+  <script src="feedback_form_validation.js"></script>
+</body>
+</html>
