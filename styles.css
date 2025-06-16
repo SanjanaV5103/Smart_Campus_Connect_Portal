@@ -1,4 +1,3 @@
-/* Smart Campus Connect CSS */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +31,7 @@ body {
 /* Header & Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: white;
+  color: rgb(255, 255, 255);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,7 +57,7 @@ body {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 30%);
   border-radius: 50%;
   animation: pulse 4s ease-in-out infinite;
 }
@@ -77,8 +76,8 @@ body {
   padding: 1.5rem 2rem;
   position: relative;
   z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
+ backdrop-filter: blur(10px); 
+  background: rgba(255, 255, 255, 0.85); /* make it more solid */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -109,8 +108,6 @@ body {
   letter-spacing: -0.025em;
   text-shadow: 0 4px 8px rgba(0,0,0,0.2);
   background: linear-gradient(45deg, #ffffff, #e0f2fe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
@@ -335,6 +332,59 @@ cite {
   font-style: normal;
 }
 
+/* Events Section */
+.event-card {
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  background: var(--bg-white);
+}
+
+.event-card:hover {
+  transform: scale(1.045) translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+  z-index: 2;
+}
+
+.event-card .card-title {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.event-card .card-text strong {
+  color: var(--accent-color);
+}
+
+/* Announcement Section */
+.announcement-roller {
+  height: 420px !important;
+  min-width: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: visible !important;
+}
+
+.announcement-track {
+  overflow: visible !important;
+}
+
+.announcement-track .col {
+  min-width: 370px;
+  max-width: 420px;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .announcement-roller {
+    height: 480px !important;
+  }
+  .announcement-track .col {
+    min-width: 95vw;
+    max-width: 98vw;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -392,4 +442,24 @@ cite {
   .module-grid {
     grid-template-columns: 1fr;
   }
+}
+.nav-link:hover {
+    background-color: #ffffff !important;
+    color: #0d6efd !important;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: 0.3s;
+  }
+
+  .nav-link.active {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  .hero {
+  background-image: url('wmremove-transformed.jpeg'); /* Replace with actual image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
