@@ -1,1 +1,2 @@
 # Smart_Campus_Connect_Portal
+The Smart Campus Connect Portal is a unified digital platform designed to streamline communication and engagement within a college or university environment. It brings together students, faculty, and administrators by offering real-time updates, event notifications, query resolution, and feedback submission in one centralized space. Through dedicated modules for announcements, events, queries, and feedback, the portal ensures that important information reaches students promptly and enables them to respond or interact effectively.
