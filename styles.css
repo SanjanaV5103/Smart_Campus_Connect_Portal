@@ -481,7 +481,7 @@ cite {
   padding: 8px 16px;
 }
 .hero {
-  background-image: url("wmremove-transformed.jpeg"); /* Replace with actual image path */
+  background-image: url("images/wmremove-transformed.jpeg"); /* Replace with actual image path */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
