@@ -89,56 +89,13 @@
         </div>
        
       <div class="col">
-        <div class="card p-3" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+        <div class="card p-3">
           <h3>📝 Feedback</h3>
-          <p>We’d love to hear from you! Click here to share your feedback — a popup form will appear where you can let us know your thoughts.</p>
+          <p>Submit your opinions or suggestions about courses, facilities, or events. Track how they are acted upon in the dedicated Feedback section.</p>
         </div>
-    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form id="feedbackForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="feedbackModalLabel">Feedback Form</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" id="name" class="form-control" />
-              <div id="nameError" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="text" id="email" class="form-control" />
-              <div id="emailError" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-              <label for="feedbackType" class="form-label">Feedback Type</label>
-              <select id="feedbackType" class="form-select">
-                <option value="">Select feedback type</option>
-                <option value="Course">Course</option>
-                <option value="Event">Event</option>
-                <option value="Facility">Facility</option>
-                <option value="General">General</option>
-              </select>
-              <div id="typeError" class="text-danger"></div>
-            </div>
-            <div class="mb-3" id="extraInputContainer"></div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" class="form-control"></textarea>
-              <div id="messageError" class="text-danger"></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button> 
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </form>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="module-section" id="announcements">
     <div class="container">
@@ -341,8 +298,60 @@
           </div>
         </div>
       </div>
+      <div class="text-center mt-5">
+        <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+          📝 Give Feedback
+        </button>
+      </div>
+
+      <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form id="feedbackForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">Feedback Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" />
+                  <div id="nameError" class="text-danger">
+                  </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" />
+            <div id="emailError" class="text-danger"></div>
+          </div>
+          <div class="mb-3">
+            <label for="feedbackType" class="form-label">Feedback Type</label>
+            <select id="feedbackType" class="form-select">
+              <option value="">Select feedback type</option>
+              <option value="Course">Course</option>
+              <option value="Event">Event</option>
+              <option value="Facility">Facility</option>
+              <option value="General">General</option>
+            </select>
+            <div id="typeError" class="text-danger"></div>
+          </div>
+          <div class="mb-3" id="extraInputContainer"></div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-control"></textarea>
+            <div id="messageError" class="text-danger"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit</button> 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </form>
     </div>
-  </section>
+  </div>
+</div>
+</div>
+</section>
 
   <section class="testimonials">
     <h2>What People Say</h2>
