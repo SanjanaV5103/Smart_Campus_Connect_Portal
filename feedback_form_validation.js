@@ -3,6 +3,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const feedbackType = document.getElementById("feedbackType");
   const extraInputContainer = document.getElementById("extraInputContainer");
 
+  // Function to properly clean up modal effects
+  function cleanupModal() {
+    // Remove modal-related classes and styles from body
+    document.body.classList.remove("modal-open");
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+    
+    // Remove any modal backdrops
+    const backdrops = document.querySelectorAll('.modal-backdrop');
+    backdrops.forEach(backdrop => backdrop.remove());
+    
+    // Make sure the modal is properly hidden
+    const modalEl = document.getElementById("feedbackModal");
+    modalEl.classList.remove("show");
+    modalEl.style.display = "none";
+    modalEl.setAttribute("aria-hidden", "true");
+    modalEl.removeAttribute("aria-modal");
+    modalEl.removeAttribute("role");
+  }
+
+  // Add event listener for when modal is hidden
+  const modalEl = document.getElementById("feedbackModal");
+  modalEl.addEventListener('hidden.bs.modal', function () {
+    // Run cleanup after modal is hidden
+    setTimeout(cleanupModal, 100);
+  });
+
   // Show textbox when Course/Event/Facility is selected
   feedbackType.addEventListener("change", function () {
     const selected = this.value;
@@ -82,17 +109,25 @@ document.addEventListener("DOMContentLoaded", function () {
         message: message.value.trim(),
       };
       console.log("Feedback submitted:", data);
-      alert("Feedback submitted successfully!");
+      
+      // Reset form
       form.reset();
       extraInputContainer.innerHTML = "";
       form.classList.remove("was-validated");
-      const modalEl = document.getElementById("feedbackModal");
+      
+      // Hide modal using Bootstrap API
       const modal = bootstrap.Modal.getInstance(modalEl);
       if (modal) {
         modal.hide();
-        modalEl.classList.remove("show");
-        document.body.classList.remove("modal-open");
-        document.querySelector(".modal-backdrop")?.remove();
+        
+        // Run cleanup immediately and also after a short delay to ensure it works
+        cleanupModal();
+        setTimeout(cleanupModal, 300);
+        
+        // Show success message after modal is hidden
+        setTimeout(() => {
+          alert("Feedback submitted successfully!");
+        }, 500);
       }
     }
   });

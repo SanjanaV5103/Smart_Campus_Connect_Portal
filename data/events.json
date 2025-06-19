@@ -1,0 +1,38 @@
+[
+  {
+    "title": "AI Workshop",
+    "date": "2025-06-20",
+    "description": "Hands-on AI & ML session by alumni at Main Seminar Hall",
+    "image": "images/aiworkshop.jpg"
+  },
+  {
+    "title": "TechFest 2025",
+    "date": "2025-06-22",
+    "description": "3-day fest with hackathons and tech talks",
+    "image": "images/techfest.png"
+  },
+  {
+    "title": "Cultural Night",
+    "date": "2025-06-28",
+    "description": "Music, dance, and fun at Open Air Theatre",
+    "image": "images/cln.png"
+  },
+  {
+    "title": "Annual Sports Meet",
+    "date": "2025-06-25",
+    "description": "Compete in athletics and games",
+    "image": "images/asm.jpeg"
+  },
+  {
+    "title": "Alumni Talk",
+    "date": "2025-06-24",
+    "description": "Career growth insights by alumni in Seminar Room 2",
+    "image": "images/al.png"
+  },
+  {
+  "title": "Innovation Day",
+  "date": "2025-07-02",
+  "description": "Showcase of student tech projects, prototypes, and innovation pitches.",
+  "image": "images/innovation.avif"
+  }
+]
